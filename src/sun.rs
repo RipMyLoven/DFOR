@@ -18,7 +18,9 @@ impl Sun {
 
                     if px >= 0 && py >= 0 && px < width as i32 && py < height as i32 {
                         let index = (py as usize) * width + (px as usize);
-                        buffer[index] = 0xFFFF00;
+                        if index < buffer.len() {
+                            buffer[index] = 0xFFFF00; 
+                        }
                     }
                 }
             }
